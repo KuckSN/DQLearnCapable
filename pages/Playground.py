@@ -144,7 +144,7 @@ try:
     st.write("### Extracted Data from Network Packet", features)
     dest_ip_address = features['ip_dst_str'][0]
     src_ip_address = features['ip_src_str'][0]
-    features = features.append(features)
+    features = pd.concat([features, features])
     formated = formating(features)
     states = formated[top10]
     del(states['label'])
