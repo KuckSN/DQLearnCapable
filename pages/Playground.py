@@ -155,7 +155,7 @@ try:
   st.write("### Choose a Machine Learning Model for Threat Detection")
   option = st.selectbox(
     "### Choose a Machine Learning Model for Threat Detection",
-    ("DQL", "RF", "ET", "LSVC", "SGD", "LR"),
+    ("DQL", "RF", "LSVC", "SGD", "LR"),
     index=None,
     placeholder="Select a ML model...",
     label_visibility="collapsed",
@@ -180,7 +180,7 @@ try:
       """, "#008000")
 
 
-  if option in ["RF", "ET", "LSVC", "SGD", "LR"]:
+  if option in ["RF", "LSVC", "SGD", "LR"]:
     model = get_model(option)
     q = model.predict(states.iloc[[0]])
     actions = q
